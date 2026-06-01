@@ -1,8 +1,14 @@
-fun main() {
-    println(buildArray(intArrayOf(1,3), 3))
-}
+enum class StackOperation {
+    PUSH, POP;
 
-fun buildArray(target: IntArray, n: Int): List<String> {
+    override fun toString(): String {
+        return name.lowercase().replaceFirstChar { it.uppercase() }
+    }
+}
+// Fun version with sequence
+fun buildArrayWithSequence(target: IntArray, n: Int): List<String> {
+
+
     val seq = generateSequence(0) {it + 1}.iterator()
     val result = ArrayDeque<StackOperation>()
 
@@ -23,12 +29,6 @@ fun buildArray(target: IntArray, n: Int): List<String> {
     return result.toList().map {it.toString()}
 }
 
-enum class StackOperation() {
-    PUSH, POP;
-
-    override fun toString(): String {
-        return name.lowercase().replaceFirstChar { it.uppercase() }
-    }
+fun main() {
+    println(buildArrayWithSequence(intArrayOf(1, 3), 3))
 }
-
-
