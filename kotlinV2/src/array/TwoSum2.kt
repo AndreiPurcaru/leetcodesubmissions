@@ -1,6 +1,6 @@
 package array
 
-fun twoSum(numbers: IntArray, target: Int): IntArray {
+fun twoSum2(numbers: IntArray, target: Int): IntArray {
     var left = 0
     var right = numbers.size - 1
 
@@ -17,5 +17,5 @@ fun twoSum(numbers: IntArray, target: Int): IntArray {
 }
 
 fun main() {
-    println(twoSum(intArrayOf(2,7,11,15), 9).contentToString())
+    println(twoSum2(intArrayOf(2,7,11,15), 9).contentToString())
 }
